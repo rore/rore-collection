@@ -1,16 +1,21 @@
 # Rore collection
 
-Local tools for developers working with coding agents, built by Rotem Hermon.
-These are personal open-source projects, shared as working examples of how I build
-and use AI tooling. Each tool can be used independently.
+Three local tools for developers working with coding agents. Keep the work useful
+beyond a single chat: the plan, the checks, and the context for whoever picks it up next.
 
-[Explore the collection](https://rore.github.io/rore-collection/)
+**[See the tools in action →](https://rore.im/rore-collection/)**
 
-| Tool | What it does |
+| Tool | What it brings |
 |---|---|
-| [Minimap](https://github.com/rore/minimap) | Keeps roadmaps and spec review beside repository files. |
-| [Agent Workflow](https://github.com/rore/agent-workflow) | Guides engineering tasks through risk assessment, planning, verification, and review, with durable Work Records. |
-| [Pallium](https://github.com/rore/Pallium) | Connects agent sessions through Relay and makes earlier sessions searchable. |
+| [Minimap](https://github.com/rore/minimap) | Roadmaps in Markdown and spec review alongside the text. |
+| [Agent Workflow](https://github.com/rore/agent-workflow) | Risk-aware planning, verification, and review, with a Work Record beside the code. |
+| [Pallium](https://github.com/rore/Pallium) | Communication between agent sessions and searchable history from earlier work. |
 
-Use each tool's repository for installation, supported runtimes, and current behavior.
-The collection does not have a combined installer or an orchestration runtime.
+Together, they support a practical flow: define a feature in Minimap, carry out
+its tasks with Agent Workflow, and use Pallium to share findings between sessions
+or recover earlier context. Each tool also works independently.
+
+I built these for my own work and am sharing them in the hope they are useful to
+others. They are personal projects, still evolving, with rough edges.
+
+For setup and documentation, start with the individual repositories above.
