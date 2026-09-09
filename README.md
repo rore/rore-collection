@@ -14,23 +14,3 @@ and use AI tooling. Each tool can be used independently.
 
 Use each tool's repository for installation, supported runtimes, and current behavior.
 The collection does not have a combined installer or an orchestration runtime.
-
-## This repository
-
-- `docs/index.html`: the collection one-pager, served by GitHub Pages.
-- `AGENTS.md`: instructions for agents working on this repository.
-- `feature-coordination-recipe.md`: proposed collection-level coordination skill.
-
-The initial one-pager preserves the preferred v2 positioning artifact. Planned
-integrations and the coordination recipe are proposals, not shipped capabilities.
-
-## Editing and publishing
-
-Edit the static page in `docs/`. Its images are currently embedded, so it has no
-build step or package dependencies. Preview it directly in a browser.
-
-GitHub Pages source: `main`, folder `/docs`. Enable it once in
-[Settings > Pages](https://github.com/rore/rore-collection/settings/pages) by choosing
-**Deploy from a branch**, **main**, **/docs**, then **Save**. After enabling it,
-pushing changes there updates the site. Keep internal discussions, credentials,
-and private work artifacts out of the published folder and repository.
