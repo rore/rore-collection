@@ -29,6 +29,8 @@ integrations and the coordination recipe are proposals, not shipped capabilities
 Edit the static page in `docs/`. Its images are currently embedded, so it has no
 build step or package dependencies. Preview it directly in a browser.
 
-GitHub Pages publishes the `docs/` folder on `main`. Pushing changes there updates
-the site. Keep internal discussions, credentials, and private work artifacts out
-of the published folder and repository.
+GitHub Pages source: `main`, folder `/docs`. Enable it once in
+[Settings > Pages](https://github.com/rore/rore-collection/settings/pages) by choosing
+**Deploy from a branch**, **main**, **/docs**, then **Save**. After enabling it,
+pushing changes there updates the site. Keep internal discussions, credentials,
+and private work artifacts out of the published folder and repository.
