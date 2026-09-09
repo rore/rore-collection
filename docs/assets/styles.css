@@ -826,7 +826,7 @@ h3 {
   border-radius: 999px;
   color: #f1d390;
 }
-pre {
+.record-preview pre {
   margin: 0;
   padding: 25px 22px 30px;
   min-height: 310px;
@@ -1172,3 +1172,10 @@ body {
     font-size: 11px;
   }
 }
+
+/* Compact installation prompt. */
+#install .inner { padding-top: 36px; padding-bottom: 36px; }
+#install .section-copy { margin-bottom: 16px; }
+#install h2 { font-size: 26px; }
+#install .section-copy p { margin-bottom: 0; font-size: 16px; }
+.install-prompt { margin: 0 0 12px; color: var(--ink); }
