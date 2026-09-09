@@ -962,8 +962,13 @@
       }
       .site-header-inner {
         min-height: 56px;
+        gap: 12px;
       }
-      nav { flex-shrink: 0; }
+      .site-header .brand {
+        font-size: clamp(11px, 3.2vw, 16px);
+        white-space: nowrap;
+      }
+      nav { flex-shrink: 0; font-size: 12px; }
       nav a:not(.collection-repo) { display: none; }
       .inner {
         padding: 48px 0;
