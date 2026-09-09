@@ -70,6 +70,7 @@
     nav a { text-decoration: none; }
     nav a:hover { color: var(--ink); }
     .collection-repo { white-space: nowrap; }
+    .install-prompt { white-space: pre-wrap; overflow-wrap: anywhere; padding: 20px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); font-size: 15px; user-select: all; }
 
     section {
       border-bottom: 1px solid var(--line);
@@ -1202,6 +1203,7 @@
           <p class="hero-positioning">Three tools, designed to work together.</p>
           <div class="actions">            <a class="button primary" href="#tools">See the tools</a>
             <a class="button secondary" href="#cross-repo">See an example</a>
+            <a class="button secondary" href="#install">Install with your agent</a>
           </div>
         </div>
       </div>
@@ -1392,6 +1394,17 @@ State: Ready for review</pre>
             </div>
           </section>
         </div>
+      </div>
+    </section>
+
+    <section id="install">
+      <div class="inner">
+        <div class="section-copy">
+          <h2>Install with your coding agent.</h2>
+          <p>Copy this prompt. Your agent will ask which tools you want and follow their setup instructions.</p>
+        </div>
+        <pre class="install-prompt"><code>Read https://github.com/rore/rore-collection/blob/main/INSTALL.md and help me install the tools I need.</code></pre>
+        <a href="https://github.com/rore/rore-collection/blob/main/INSTALL.md" target="_blank" rel="noopener noreferrer">Read the installation guide &#8599;</a>
       </div>
     </section>
 

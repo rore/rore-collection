@@ -18,4 +18,13 @@ or recover earlier context. Each tool also works independently.
 I built these for my own work and am sharing them in the hope they are useful to
 others. They are personal projects, still evolving, with rough edges.
 
-For setup and documentation, start with the individual repositories above.
+## Install with your coding agent
+
+Copy this prompt into your coding agent:
+
+```text
+Read https://github.com/rore/rore-collection/blob/main/INSTALL.md and help me install the tools I need.
+```
+
+The [installation guide](INSTALL.md) helps your agent ask which tools you want,
+follow their official setup instructions, and verify the result.
