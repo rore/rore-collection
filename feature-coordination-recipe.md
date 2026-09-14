@@ -45,21 +45,37 @@ ledger or make any tool dependent on the entire collection.
    specifications are complete or concurrent execution is safe. Check shared files,
    databases, ports, running services, test state, and external environments.
 4. Select useful parallel work within the user's cost and execution constraints.
-   Find existing sessions through Pallium; choose exact recipients explicitly.
-   If no suitable session is available, work serially or expose the limitation.
-   Relay does not create agents. Launching a new session requires a separately
-   available and authorized runtime mechanism, outside the initial recipe.
-5. Send a bounded assignment: objective, canonical item/Work Record links, scope,
-   acceptance criteria, relevant constraints, and expected result evidence. Attach
-   applicable work references through supported interfaces. Each executing session
-   follows Agent Workflow, including its exemptions and required human approvals.
-6. On a result or blocker, inspect the reported revision, evidence, and unresolved
-   findings. Relay delivery/ACK means context admission, not task acceptance,
-   completion, correctness, or agreement to an assignment. Silence is not failure.
-7. Update canonical task state only after the applicable verification/review gates
+   Find existing sessions through Pallium and choose exact recipients explicitly,
+   but do not infer availability from idle/dormant state, participant membership,
+   or an empty work-reference list. Inspect known current work and ask. If no
+   suitable session is available, work serially or expose the limitation. Relay
+   does not create agents; launching one requires a separately available and
+   authorized runtime mechanism.
+5. Send a non-preempting offer that already contains the complete bounded assignment:
+   objective, canonical item/Work Record links, scope, acceptance criteria,
+   constraints, dependencies, and expected result evidence. Ask for one explicit
+   response: `accept`, `defer`, or `decline`. Do not attach work on the receiver's
+   behalf.
+6. The receiver preserves its current user assignment and inspects its actual work
+   before replying. Existing ad hoc work still counts when it has no supported
+   canonical reference; report it without inventing an identifier. On `accept`, the
+   receiver attaches or reuses the authoritative exact work reference when supported
+   and starts the offered assignment. `defer` and `decline` change no task state or
+   association. Do not require another lead confirmation unless scope or dependencies
+   changed.
+7. On a result or blocker, inspect the reported revision, evidence, and unresolved
+   findings. Relay delivery/ACK, wake, participant presence, and work association mean
+   neither task acceptance nor completion, correctness, or agreement. Silence is not
+   failure, and sending an offer does not prevent a receiver from abandoning its
+   current work; the receiver must preserve it.
+8. Update canonical task state only after the applicable verification/review gates
    pass. Recalculate ready candidates as results change. Do not dispatch duplicate
    work after timeout, session restart, or a repeated completion message.
-8. Verify that the delivered slices work together against the original outcome.
+9. On handoff, the new receiver accepts and attaches itself before starting. The old
+   receiver detaches only after it actually leaves the work, and only the finished
+   explicit association it successfully attached; structural and unrelated references
+   remain. Completion uses the same exact cleanup rule.
+10. Verify that the delivered slices work together against the original outcome.
    Finish with evidence and remaining limitations in existing canonical records.
    If interrupted, leave a resumable pointer to current items, decisions, pending
    assignments, and the next action; do not rely on hidden conversation history.
@@ -70,19 +86,43 @@ ledger or make any tool dependent on the entire collection.
 - Inspect current shipped behavior in all three tools at implementation time.
   Distinguish available primitives from roadmap promises; document fallbacks and
   blocked capabilities rather than inventing tool commands or metadata fields.
-- Relevant planned foundations: Minimap `add-work-item-dependencies` and
-  `add-pallium-work-item-participants`; Pallium
-  `add-relay-session-work-associations`. Participant UI is optional for an
-  agent-led trial. Manual named-recipient coordination can test the recipe earlier.
-- Reuse Agent Workflow's existing handoff, separate-review, and evidence rules.
-  Receiving-session readiness and targeted behavioral review are proposed narrow
-  improvements, not assumed shipped requirements or duplicate collection gates.
+- Shipped foundations are Pallium's exact work associations, Minimap's optional
+  participant view and authoritative item references, and Agent Workflow's receiver
+  readiness, handoff, evidence, and targeted-review guidance. Minimap dependency
+  support remains version-dependent: use it only when the installed version exposes
+  it, otherwise keep prerequisites explicit in the existing canonical item.
+- Participant UI is optional for an agent-led trial. Manual named-recipient
+  coordination can test the recipe without making any tool mandatory.
 - Keep assignments bounded and recovery explicit. Use existing records and Relay
   message/endpoint identifiers where available; do not introduce an assignment
   service merely to represent orchestration in code.
 - Cross-repository work uses exact repository/item/revision references. Missing
   dependency information or unavailable repositories remain explicit uncertainty.
   Respect configured checkout versions and each tool's scope/visibility rules.
+
+## Optional Tool Fallbacks
+
+| Unavailable tool | Continue with |
+|---|---|
+| Minimap | Existing authoritative issue, Work Record, or file links. Keep readiness in that source; do not create a shadow ledger. |
+| Pallium | An authorized runtime communication channel and the same explicit receiver decision. Do not infer participants or associations. |
+| Agent Workflow | The repository's native planning, risk, verification, and review process. Do not claim a Work Record or gate that is absent. |
+
+## Worked Scenario
+
+1. A lead has task A and task B, where B depends on verified evidence from A.
+   It inspects canonical state and current associations before offering either task.
+2. One candidate has no work references but reports an ad hoc user task, so it
+   replies `defer`. The lead does not preempt it or attach A on its behalf.
+3. A second candidate receives the complete A offer, checks its current work,
+   replies `accept`, attaches A's authoritative reference when supported, and starts
+   without another confirmation round trip.
+4. Delivery and association are recorded, but the lead keeps B blocked until A's
+   reported revision and evidence pass the applicable review.
+5. During B, a handoff receiver explicitly accepts and attaches B. The first worker
+   detaches only its own explicit B association after leaving; its unrelated or
+   structural references remain. The same flow still works when any optional tool is
+   absent by using the fallback above.
 
 ## Out of Scope
 
