@@ -60,14 +60,15 @@ ledger or make any tool dependent on the entire collection.
    before replying. Existing ad hoc work still counts when it has no supported
    canonical reference; report it without inventing an identifier. On `accept`, the
    receiver attaches or reuses the authoritative exact work reference when supported
-   and starts the offered assignment. `defer` and `decline` change no task state or
-   association. Do not require another lead confirmation unless scope or dependencies
-   changed.
+   and follows the repository's applicable workflow, including its exemptions and
+   required human approvals, before implementation. Acceptance is not permission to
+   bypass those gates. `defer` and `decline` change no task state or association.
+   Do not require another lead confirmation unless scope or dependencies changed.
 7. On a result or blocker, inspect the reported revision, evidence, and unresolved
    findings. Relay delivery/ACK, wake, participant presence, and work association mean
    neither task acceptance nor completion, correctness, or agreement. Silence is not
-   failure, and sending an offer does not prevent a receiver from abandoning its
-   current work; the receiver must preserve it.
+   failure. Relay transport does not enforce non-preemption; the receiver must preserve
+   current work.
 8. Update canonical task state only after the applicable verification/review gates
    pass. Recalculate ready candidates as results change. Do not dispatch duplicate
    work after timeout, session restart, or a repeated completion message.
