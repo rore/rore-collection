@@ -200,6 +200,6 @@ Choose the smallest trial objective, the minimum supported capability set, and h
 existing parent/work records reference assignments across tasks. Settle these from
 actual repository conventions; do not introduce a universal schema in advance.
 
-The initial [collection coordination skill](skills/collection-coordination/SKILL.md)
+The initial [collection coordination skill](../skills/collection-coordination/SKILL.md)
 has shipped. The bounded trial and combined acceptance remain open; no automatic
 orchestration is claimed.

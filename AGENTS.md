@@ -1,8 +1,8 @@
 # Contributing to the collection
 
 This repository contains the collection overview, installation guide, static site,
-and collection-level proposals. Tool implementations and tool-specific roadmaps
-belong in their respective repositories.
+and collection-level plans. Keep proposals and the coordination queue in `plans/`.
+Tool implementations and tool-specific roadmaps belong in their respective repositories.
 
 ## Content
 
@@ -24,4 +24,4 @@ belong in their respective repositories.
   desktop and mobile widths after visual changes.
 - GitHub Pages serves docs/ from main. Changes pushed there are public after deployment.
 - The public README is for visitors. Keep contributor procedures here and proposed
-  feature details in their own files.
+  feature details in `plans/`.
