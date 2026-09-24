@@ -28,3 +28,9 @@ Read https://github.com/rore/rore-collection/blob/main/INSTALL.md and help me in
 
 The [installation guide](INSTALL.md) helps your agent ask which tools you want,
 follow their official setup instructions, and verify the result.
+
+## Coordinate a larger objective
+
+Ask your agent to read the optional [collection coordination skill](skills/collection-coordination/SKILL.md)
+when assignments, dependencies, or handoffs span tasks. The three tools remain
+independently useful.
