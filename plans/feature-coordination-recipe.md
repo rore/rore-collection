@@ -175,6 +175,21 @@ mandatory cross-model review, and a coordinator that is forbidden from coding.
 - An independent reviewer checks the skill, and a fresh coordinator can recover
   the active assignment and next action from canonical files without chat history.
 
+## Observed live evidence (2026-09-24)
+
+- On a disposable Minimap roadmap item, the authoritative item-ref CLI supplied
+  the exact pair. A real Pallium session attached only its own explicit association.
+  Refreshed board requests returned HTTP 200, `status: ok`, `partial: false`, and
+  count 0 → 1 → 0 across attach and detach. List and Columns showed no badge,
+  then `1 attached`, then no badge. Detach succeeded, final participant lookup
+  was empty, and the temporary repo was removed. An independent disposable run
+  also passed; it is not another optional-tool combination.
+- This covers the Minimap–Pallium participant-count lifecycle supported by
+  [Pallium PR #233](https://github.com/rore/Pallium/pull/233), its
+  [isolation follow-up](https://github.com/rore/Pallium/pull/235), and
+  [Minimap PR #22](https://github.com/rore/minimap/pull/22). It does not establish
+  a real handoff, a combined three-tool trial, or all eight optional-tool cases.
+
 ## Broader validation and done when
 
 1. A lead agent can follow the recipe for a small objective with two independent
