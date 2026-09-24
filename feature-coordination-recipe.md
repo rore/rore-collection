@@ -198,5 +198,5 @@ existing parent/work records reference assignments across tasks. Settle these fr
 actual repository conventions; do not introduce a universal schema in advance.
 
 The initial [collection coordination skill](skills/collection-coordination/SKILL.md)
-is in review. The bounded trial and combined acceptance remain open; no automatic
+has shipped. The bounded trial and combined acceptance remain open; no automatic
 orchestration is claimed.
