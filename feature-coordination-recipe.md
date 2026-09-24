@@ -38,6 +38,8 @@ ledger or make any tool dependent on the entire collection.
 1. Establish the overall outcome, acceptance criteria, constraints, and allowed
    delegation/model budget. Inspect existing work and current capabilities before
    creating anything; avoid decomposing a task that one session can handle cheaply.
+   When using Minimap, designate one shared roadmap checkout for the objective;
+   otherwise use the existing authoritative work source.
 2. Propose independently verifiable delivery slices, their prerequisites, and the
    context each needs. Prefer working outcomes over untestable implementation layers.
    Record canonical items and references using Minimap's supported contract.
@@ -64,14 +66,19 @@ ledger or make any tool dependent on the entire collection.
    required human approvals, before implementation. Acceptance is not permission to
    bypass those gates. `defer` and `decline` change no task state or association.
    Do not require another lead confirmation unless scope or dependencies changed.
+   Workers implement in isolated checkouts and report the exact feature reference,
+   revision, result evidence, and blockers to the lead. They attach their own session
+   to the exact work reference through Pallium when available.
 7. On a result or blocker, inspect the reported revision, evidence, and unresolved
    findings. Relay delivery/ACK, wake, participant presence, and work association mean
    neither task acceptance nor completion, correctness, or agreement. Silence is not
    failure. Relay transport does not enforce non-preemption; the receiver must preserve
    current work.
-8. Update canonical task state only after the applicable verification/review gates
-   pass. Recalculate ready candidates as results change. Do not dispatch duplicate
-   work after timeout, session restart, or a repeated completion message.
+8. The lead updates the shared roadmap at assignment acceptance and on reported
+   progress or blockers. A sole developer makes those updates itself. Mark completion
+   only after the applicable verification/review gates pass. Recalculate ready
+   candidates as results change. Do not dispatch duplicate work after timeout,
+   session restart, or a repeated completion message.
 9. On handoff, the new receiver accepts and attaches itself before starting. The old
    receiver detaches only after it actually leaves the work, and only the finished
    explicit association it successfully attached; structural and unrelated references
@@ -109,21 +116,43 @@ ledger or make any tool dependent on the entire collection.
 | Pallium | An authorized runtime communication channel and the same explicit receiver decision. Do not infer participants or associations. |
 | Agent Workflow | The repository's native planning, risk, verification, and review process. Do not claim a Work Record or gate that is absent. |
 
-## Worked Scenario
+## Optional-tool validation matrix
 
-1. A lead has task A and task B, where B depends on verified evidence from A.
-   It inspects canonical state and current associations before offering either task.
+| Minimap | Agent Workflow | Pallium | Trial pass condition |
+|---|---|---|---|
+| No | No | No | Pick up and complete work in an existing authoritative source. |
+| Yes | No | No | Start, block, and complete an item in one shared roadmap checkout. |
+| No | Yes | No | Apply required task gates without inventing a roadmap item. |
+| No | No | Yes | Offer work to an exact recipient; accept without inventing a work ref. |
+| Yes | Yes | No | Keep item state and any required Work Record distinct through review. |
+| Yes | No | Yes | Receiver attaches an exact feature ref; participant view and detach agree. |
+| No | Yes | Yes | Receiver attaches an exact existing record ref when one exists. |
+| Yes | Yes | Yes | Run the pickup, participant, pause/handoff, and completion trial below. |
+
+## Bounded live trial
+
+Use real agent sessions and synthetic public work items. Record exact references,
+revisions, participant evidence, and the final reviewed state; do not count Relay
+delivery alone as acceptance.
+
+1. A lead picks up a roadmap objective in its designated shared checkout, with task
+   B dependent on verified evidence from A. It inspects canonical state and current
+   associations before offering either task.
 2. One candidate has no work references but reports an ad hoc user task, so it
    replies `defer`. The lead does not preempt it or attach A on its behalf.
 3. A second candidate receives the complete A offer, checks its current work,
    replies `accept`, attaches A's authoritative reference when supported, and starts
-   without another confirmation round trip.
+   in an isolated checkout without another confirmation round trip. The lead records
+   the accepted assignment; the participant view, when enabled, shows that session.
 4. Delivery and association are recorded, but the lead keeps B blocked until A's
    reported revision and evidence pass the applicable review.
-5. During B, a handoff receiver explicitly accepts and attaches B. The first worker
-   detaches only its own explicit B association after leaving; its unrelated or
-   structural references remain. The same flow still works when any optional tool is
-   absent by using the fallback above.
+5. During B, the worker reports a blocker and pauses. The lead records the blocked
+   state. A handoff receiver explicitly accepts and attaches B before continuing in
+   its own checkout. The first worker detaches only its explicit B association after
+   leaving; unrelated or structural references remain.
+6. The handoff receiver reports B's exact feature reference, revision, and evidence.
+   The lead verifies the result, updates the shared roadmap to complete, and checks
+   the original objective. With no lead, the sole developer performs these updates.
 
 ## Out of Scope
 
