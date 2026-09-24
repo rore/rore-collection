@@ -38,8 +38,9 @@ ledger or make any tool dependent on the entire collection.
 1. Establish the overall outcome, acceptance criteria, constraints, and allowed
    delegation/model budget. Inspect existing work and current capabilities before
    creating anything; avoid decomposing a task that one session can handle cheaply.
-   When using Minimap, designate one shared roadmap checkout for the objective;
-   otherwise use the existing authoritative work source.
+   When using Minimap, designate one owner-managed shared roadmap checkout per
+   repository using it; inspect each checkout and preserve unrelated dirty changes.
+   Otherwise use the existing authoritative work source.
 2. Propose independently verifiable delivery slices, their prerequisites, and the
    context each needs. Prefer working outcomes over untestable implementation layers.
    Record canonical items and references using Minimap's supported contract.
@@ -53,7 +54,9 @@ ledger or make any tool dependent on the entire collection.
    suitable session is available, work serially or expose the limitation. Relay
    does not create agents; launching one requires a separately available and
    authorized runtime mechanism.
-5. Send a non-preempting offer that already contains the complete bounded assignment:
+5. Prefer Relay for independent sessions when available; otherwise use an authorized,
+   non-preempting app-message channel. Use native delegation for subagents. Send a
+   non-preempting offer that already contains the complete bounded assignment:
    objective, canonical item/Work Record links, scope, acceptance criteria,
    constraints, dependencies, and expected result evidence. Ask for one explicit
    response: `accept`, `defer`, or `decline`. Do not attach work on the receiver's
@@ -126,7 +129,7 @@ ledger or make any tool dependent on the entire collection.
 | No | No | Yes | Offer work to an exact recipient; accept without inventing a work ref. |
 | Yes | Yes | No | Keep item state and any required Work Record distinct through review. |
 | Yes | No | Yes | Receiver attaches an exact feature ref; participant view and detach agree. |
-| No | Yes | Yes | Receiver attaches an exact existing record ref when one exists. |
+| No | Yes | Yes | Reuse or verify a structural Work Record ref, or follow the owning association procedure; do not duplicate it. |
 | Yes | Yes | Yes | Run the pickup, participant, pause/handoff, and completion trial below. |
 
 ## Bounded live trial
