@@ -1,0 +1,15 @@
+---
+name: collection-coordination
+description: Coordinate a bounded objective across agent tasks or repositories when assignments, dependencies, handoffs, or combined acceptance need a lead. Minimap, Agent Workflow, and Pallium are optional; skip ordinary single-task work.
+---
+
+# Collection coordination
+
+1. State the outcome, acceptance evidence, constraints, and allowed delegation budget. Reuse existing authoritative work. Split only where a result can be verified independently; record prerequisites and shared-resource conflicts.
+2. When Minimap is available, designate one shared roadmap checkout. The lead updates sequence and status on accepted assignments, progress, blockers, and verified completion. A sole developer makes those updates itself. Workers use isolated checkouts and report the exact feature reference, revision, evidence, and blockers. Without Minimap, use the existing authoritative issue, file, or task record.
+3. Ask candidate sessions about their current work. Idle state, participant membership, and an empty work-reference list do not prove availability. Send a non-preempting offer with the full bounded scope, prerequisites, acceptance evidence, and one requested response: `accept`, `defer`, or `decline`. Preserve the recipient's model and effort unless the user asks to change them. Existing user assignments take precedence.
+4. Treat a saved, delivered, or waking Relay message as transport evidence only. An explicit `accept` starts an assignment; reviewed evidence establishes completion. Keep uncertain or blocked delivery visible in the canonical work source. Do not infer failure from silence, promise an automatic wake, or duplicate dispatch after a timeout.
+5. The receiver follows its repository's applicable gates. It may attach its own session to an exact reference from the owning tool when Pallium supports that operation. Never invent a reference or attach on the receiver's behalf. For handoff, the new receiver accepts before starting; the departing worker removes only its own finished explicit association after leaving.
+6. Review each reported revision and the combined outcome before closing work. Record current state, pending offers, decisions, evidence, and the next action in the authoritative source so a fresh coordinator can resume. History may supply context but does not replace current state.
+
+Load Minimap's, Agent Workflow's, or Pallium's installed skill only when using that tool's procedures. If Agent Workflow is absent, follow the repository's native gates. If Pallium is absent, use an authorized communication channel and do not claim participant evidence. None of the three tools is required to perform ordinary work. Do not create a scheduler, parallel registry, or copied roadmap state.

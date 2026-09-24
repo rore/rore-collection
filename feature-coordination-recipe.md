@@ -1,7 +1,7 @@
 ---
 id: collection-coordination-recipe
 title: Coordinate multi-task work across the collection
-status: proposed
+status: in_progress
 priority: high
 ---
 
@@ -160,7 +160,19 @@ A DAG execution engine, agent launcher, provider/model selection service, resour
 lock manager, automatic polling/chasing, stacked-PR automation, new message semantics,
 mandatory cross-model review, and a coordinator that is forbidden from coding.
 
-## Validation and Done When
+## Initial skill acceptance
+
+- The skill validates structurally, is discoverable on demand, and keeps all three
+  tools optional without inventing references or bypassing repository gates.
+- Use this accepted collection assignment for the real pickup, isolated work,
+  review, and completion path. Record participant and handoff steps as untested
+  until real sessions perform them; a message or simulated result is not evidence.
+- Check saved-but-unaccepted delivery, a busy candidate, absent optional tools,
+  insufficient result evidence, and duplicate delivery with controlled cases.
+- An independent reviewer checks the skill, and a fresh coordinator can recover
+  the active assignment and next action from canonical files without chat history.
+
+## Broader validation and done when
 
 1. A lead agent can follow the recipe for a small objective with two independent
    tasks and one dependent integration task, using canonical files and existing
@@ -185,5 +197,6 @@ Choose the smallest trial objective, the minimum supported capability set, and h
 existing parent/work records reference assignments across tasks. Settle these from
 actual repository conventions; do not introduce a universal schema in advance.
 
-This file preserves the proposed collection feature. No implementation or automatic
+The initial [collection coordination skill](skills/collection-coordination/SKILL.md)
+is in review. The bounded trial and combined acceptance remain open; no automatic
 orchestration is claimed.

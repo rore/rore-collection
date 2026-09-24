@@ -68,8 +68,10 @@ rules; selection of a tool does not authorize unrelated governance changes.
 
 If multiple tools are selected, install and verify them individually. There is no
 required collection-wide installation order. Do not configure proposed work-item
-bindings, dependency features, or the coordination recipe as if they already ship;
-confirm availability in the selected tool version first.
+bindings or dependency features as if they already ship; confirm availability in
+the selected tool version first. For a larger multi-task objective, the optional
+[collection coordination skill](skills/collection-coordination/SKILL.md) can be read
+on demand or installed through the runtime's supported skill mechanism.
 
 ### 4. Verify and hand back
 
