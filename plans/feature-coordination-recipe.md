@@ -187,7 +187,7 @@ mandatory cross-model review, and a coordinator that is forbidden from coding.
 - This covers the Minimap–Pallium participant-count lifecycle supported by
   [Pallium PR #233](https://github.com/rore/Pallium/pull/233), its
   [isolation follow-up](https://github.com/rore/Pallium/pull/235), and
-  [Minimap PR #22](https://github.com/rore/minimap/pull/22). It does not establish
+  merged [Minimap PR #22](https://github.com/rore/minimap/pull/22). It does not establish
   a real handoff, a combined three-tool trial, or all eight optional-tool cases.
 
 ## Broader validation and done when
