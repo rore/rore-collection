@@ -54,9 +54,12 @@ ledger or make any tool dependent on the entire collection.
    suitable session is available, work serially or expose the limitation. Relay
    does not create agents; launching one requires a separately available and
    authorized runtime mechanism.
-5. Prefer Relay for independent sessions when available; otherwise use an authorized,
-   non-preempting app-message channel. Use native delegation for subagents. Send a
-   non-preempting offer that already contains the complete bounded assignment:
+5. Prefer Relay for independent sessions when available. Use an authorized
+   app-message fallback only when recipient state and channel behavior allow
+   an offer without interrupting ongoing work; otherwise defer and report the
+   limitation.
+   Use native delegation for subagents. Send an offer containing the complete
+   bounded assignment:
    objective, canonical item/Work Record links, scope, acceptance criteria,
    constraints, dependencies, and expected result evidence. Ask for one explicit
    response: `accept`, `defer`, or `decline`. Do not attach work on the receiver's
