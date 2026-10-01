@@ -2,6 +2,8 @@
 
 Use only when the human requests replacement of the manager or team sessions. Do not initiate replacement based on session length. The outgoing manager drives the transfer; the human should not need to copy prompts or recreate developers manually.
 
+Keep this a transfer, not a new project: reuse current records and verified evidence; create no separate plan, Work Record, review, or test run solely for session replacement. Combine each outgoing worker's handoff and stop confirmation in one response, and each successor's acceptance and readiness in one response. Recheck only missing or changed facts; investigate delivery only when uncertain. Avoid ACK loops and repeated status polling. Give the human one completion summary, plus any actionable blocker.
+
 ## Establish scope and settings
 
 - Use the user's request and current team to determine which sessions to replace. Ask one concise, explained clarification if team membership, replacement scope, or Relay-name takeover is unclear. Do not include unrelated agents or replace developers carrying separate user work without resolving that scope.
