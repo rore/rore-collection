@@ -5,6 +5,8 @@ description: Coordinate a bounded objective across agent tasks or repositories w
 
 # Collection coordination
 
+For a user-requested manager/team session replacement, load [Team handoff](references/team-handoff.md). Carry out the transfer, asking only for material missing information; a request for a handoff prompt alone does not authorize creating chats.
+
 1. State the outcome, acceptance evidence, constraints, and allowed delegation budget. Reuse existing authoritative work. Split only where a result can be verified independently; record prerequisites and shared-resource conflicts.
 2. When Minimap is available, designate one owner-managed shared roadmap checkout per repository using it; inspect that checkout and preserve unrelated dirty changes. The lead updates sequence and status on accepted assignments, progress, blockers, and verified completion. A sole developer makes those updates itself. Workers use isolated checkouts and report the exact feature reference, revision, evidence, and blockers. Without Minimap, use the existing authoritative issue, file, or task record.
 3. Ask candidate sessions about their current work. Idle state, participant membership, and an empty work-reference list do not prove availability. Prefer Relay for independent sessions when available. For fallback, verify that the recipient's current state and the authorized channel allow an offer without interrupting ongoing work; otherwise defer and report the limitation. Use native delegation for subagents. Send a bounded offer with the full scope, prerequisites, acceptance evidence, and one requested response: `accept`, `defer`, or `decline`. Preserve the recipient's model and effort unless the user asks to change them. Existing user assignments take precedence.
