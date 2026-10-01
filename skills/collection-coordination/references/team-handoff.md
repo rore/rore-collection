@@ -6,9 +6,10 @@ Keep this a transfer, not a new project: reuse current records and verified evid
 
 ## Establish scope and settings
 
-- Use the user's request and current team to determine which sessions to replace. Ask one concise, explained clarification if team membership, replacement scope, or Relay-name takeover is unclear. Do not include unrelated agents or replace developers carrying separate user work without resolving that scope.
+- Use current assignments and the user's request to identify the team to replace. Historical participation, a Relay alias, or runtime activity alone does not establish membership. Exclude completed or superseded agents unless the user explicitly includes them; clarify uncertain membership and separate user work.
 - Preserve each session's own exact model and reasoning effort, not a common team setting. Verify from authoritative runtime settings or the human; self-description, role, task title, and defaults are insufficient. If settings cannot be read or reproduced, ask before creating that replacement. Do not silently substitute a model or effort.
-- A request to replace the team while preserving its settings authorizes setting those verified values on the new sessions. It does not authorize changing existing sessions, expanding work, or bypassing host approval rules. Use supported chat-creation tools for independent replacements, not temporary subagents. Verify the available tools can preserve the project, host, and actual working checkout; surface any unsupported requirement.
+- Before stopping workers, creating chats, or transferring names, show one compact proposal: each outgoing session and current assignment, its proposed replacement role, model/effort, checkout and Relay name, plus the total new-chat count including the manager. Identify excluded old agents briefly when relevant. Ask for explicit approval of this exact roster and wait; a general handoff request authorizes preparation, not execution.
+- Approval authorizes only the listed replacements, verified settings, and stated name takeovers. Pass that approved roster and count to the successor; it must not rediscover and recreate historical developers. A material change to membership, count, settings, or takeover scope requires renewed approval; do not ask again for unchanged approved steps. Do not bypass host approval rules. Use supported chat-creation tools for independent replacements, not temporary subagents, and verify they can preserve the project, host, and actual working checkout before proposing the transfer.
 
 ## Prepare and stop safely
 
