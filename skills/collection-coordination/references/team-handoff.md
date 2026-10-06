@@ -1,6 +1,6 @@
 # Team handoff
 
-Use only when the human requests replacement of the manager or team sessions. Do not initiate replacement based on session length. The outgoing manager drives the transfer; the human should not need to copy prompts or recreate developers manually.
+Read this procedure when the human asks about manager/team session handoff, including exploratory questions about fresh sessions or whether a guide exists. Distinguish this reusable procedure from the project-specific handoff summary that may still need preparation. Discussion alone does not authorize replacement; obtain approval of the exact roster below before execution. Do not initiate replacement based on session length. The outgoing manager drives the approved transfer; the human should not need to copy prompts or recreate developers manually.
 
 Keep this a transfer, not a new project: reuse current records and verified evidence; create no separate plan, Work Record, review, or test run solely for session replacement. Combine each outgoing worker's handoff and stop confirmation in one response, and each successor's acceptance and readiness in one response. Recheck only missing or changed facts; investigate delivery only when uncertain. Avoid ACK loops and repeated status polling. Give the human one completion summary, plus any actionable blocker.
 
