@@ -24,14 +24,25 @@ another orchestrator. Keep the mechanism simple and usable directly with a human
 
 ## Agreed Behavior
 
-### One identity and a small definition
+### One runtime identity, mapped guidance
 
-The Relay name IS the role identity. Do not add another role name, ID or mapping.
-One active session holds that name; start with one active role per session. The
-definition's pathname is navigation, not identity, so moving it does not create a
-new role. Define one simple discovery convention during implementation, with a
-small Markdown entry file and optional linked references. Detect duplicate or
-conflicting definitions instead of picking one silently.
+The Relay name identifies a persistent position and its history. A repository-local
+`roles/mapping.yaml` selects that position's Markdown guidance; it is configuration,
+not another runtime identity or registration. Use one exact name-to-file entry per
+position, with paths relative to `roles/`:
+
+```yaml
+"@backend1": backend.md
+"@backend2": backend.md
+"@frontend1": frontend.md
+```
+
+Several names can select the same file. No wrapper file per name is required;
+no wildcard matching or inheritance engine. Moving a guidance file requires updating
+its mapping but does not change Relay identity or historical attribution. Validate
+the mapping without silently accepting duplicate names, invalid configuration or
+missing/unreadable referenced files. Missing mapping or no entry is normal opt-out;
+malformed existing configuration is an error, not opt-out.
 
 The entry names the role, purpose, responsibilities, boundaries, working guidance,
 expected outputs and when to read references. Shared product/design standards
@@ -39,35 +50,38 @@ stay in existing authoritative documents. Role-specific working guidance belongs
 in the role file; temporary branches, blockers and next steps stay in task/handoff
 records. Provide a short generic example and a simple creation/bootstrap path.
 
-Multiple named positions can share a specialty: `@backend-1` and `@backend-2`
-each have a role file linking to the same backend guide, with optional individual
-responsibilities. Reuse Markdown links, not another role ID or assignment system.
-Their routing, history and replacement continuity remain separate.
+The role skill guides setup of multiple agents of one specialty: reuse the shared
+guide, choose distinct Relay names through existing authorized procedures, and add
+mapping entries. Coordination owns agent creation/approval. Their routing, history
+and replacement continuity remain separate.
 
 ### Adoption and handoff
 
-When using the role skill, discover the session's current Relay name and look for
-its definition in the project. If found, read and follow it; if absent, the name
+When using the role skill, discover the session's current Relay name and resolve
+its mapping in the project. If mapped, read and follow the file; if unmapped, the name
 remains an ordinary Relay name with no role-specific guidance. No separate role
 adoption, registration or departure call. Report unavailable name discovery rather
 than guess. No definition is normal; an existing unreadable or conflicting
 definition is an error to surface. Reuse existing naming and authorized takeover;
 loading guidance does not itself accept work or expand permissions.
 
-Coordination carries the role entry path/revision with its existing continuation
+Coordination carries the mapping and guidance path/revision with its existing continuation
 packet. The successor reads current guidance and explicitly accepts unfinished
 work. Preserve guidance changes and pass any unpublished edits on handoff or
-completion. The single role holder handles normal Git/worktree reconciliation;
+completion. Agents handle normal Git/worktree reconciliation;
 do not add a dedicated canonical checkout or synchronization system. Shared-file
 edits still preserve others' changes. Recheck the current Relay binding on skill
-entry and resume, including after another session takes over the name; do not
-trust a name cached in conversation. Check the matching definition on name change
-and handoff. On resume, refresh applicable linked shared guidance even without a
+entry, resume, handoff and starting a new assignment, including after another
+session takes over the name; do not trust a name cached in conversation. Recheck
+the mapping and applicable guidance at those boundaries and on a known name change.
+Refresh applicable linked shared guidance even without a
 change notification; use normal Git reconciliation if the checkout is stale,
 without claiming automatic cross-worktree synchronization. If ownership was lost, stop using
 and maintaining the former role's guidance. Unavailable discovery is not proof of
 continued ownership; disclose uncertainty and defer role-specific actions until
 resolved. This does not revoke independent task instructions or shared standards.
+Mapping edits do not instantly change an already-running agent's behavior; there
+is no per-turn polling or automatic interruption to refresh guidance.
 
 Keep a short durable discovery instruction: when using roles, use freshly supplied
 Relay identity to find guidance, including after compaction. Prefer Pallium's
@@ -100,8 +114,12 @@ tool failures and failed experiments must not become permanent rules.
 Correct existing guidance rather than append redundant rules. Choose the owning
 document without making the human route each lesson: shared practice (for example,
 checking tenant isolation when changing queries) belongs in the shared guide;
-lasting position-specific responsibility (such as owning billing) belongs in its
-role file; temporary assignments belong in task records. Preserve concurrent edits
+lasting position-specific responsibility (such as owning billing) must remain
+position-specific; temporary assignments belong in task records. Never silently
+promote a correction aimed at one named agent into shared guidance. Ask when its
+intended scope is unclear. If distinct lasting guidance is needed, map that position
+to a specific Markdown file linking the common guide rather than change everyone's
+instructions or add a new identity. Preserve concurrent edits
 through ordinary Git reconciliation. Put shared standards in their existing
 document and link them. Keep useful evidence references when
 available, not conversation copies or session diaries. No change is valid when no
@@ -123,11 +141,11 @@ name's current holder. No automatic historical backfill.
 
 1. Reuse existing Relay name discovery and takeover. Agree only the name-based
    history lookup contract with Pallium. Resolve file discovery/bootstrap and
-   missing/conflicting definitions; keep the Relay name as the only identity.
+   missing/invalid mappings; keep the Relay name as the only runtime identity.
 2. Implement the role skill and only necessary coordination discovery/handoff
    links. Keep role procedures in the role skill; managers and direct-user sessions
    load the same guidance. Package/install using existing skill conventions.
-3. Test a real role: A holds a name and reads its file -> human gives a durable correction -> A updates the
+3. Test a real role: A holds a name and reads its mapped file -> human gives a durable correction -> A updates the
    correct document -> B takes over with authorization -> B follows the expectation
    on a relevant task without a reminder -> B retrieves A's original discussion.
    Then resume A without a local rename: A discovers the externally caused name
@@ -138,14 +156,18 @@ name's current holder. No automatic historical backfill.
    verify fresh identity and guidance recovery rather than assuming a hook ran.
 4. Verify a task-local exception does not become a permanent rule; unrelated
    shared guidance and task refs survive. Check unpublished handoff edits, stale
-   guidance, names without role files, name changes, missing references, occupied
+   guidance, missing mapping/no entry, duplicate names, malformed configuration,
+   missing referenced files, name changes, occupied
    names and unavailable history. Verify no role-registration call is required. Report
    partial success honestly. Demonstrate direct-user use without a manager.
-5. Two differently named agents use one shared guide. A lasting correction from
+5. Two differently named agents map to one shared guide. A lasting correction from
    one updates that guide once; the other resumes and applies the updated guidance
    without a separate notification or human reminder. Verify position-specific
    guidance stays separate, temporary task instructions do not become shared rules,
    concurrent edits are preserved, and messages/history retain their individual names.
+   Change a mapping and verify adoption at the next defined refresh boundary,
+   without claiming an immediate switch in an ongoing turn. An ambiguous or
+   individual correction must not silently alter the shared guide.
 6. Record actual host support and combined evidence in these existing features.
    Observe a bounded sample of natural corrections and replacements after release:
    did expectations survive, were inappropriate rules added, and did upkeep cost
