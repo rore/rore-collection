@@ -62,6 +62,15 @@ and maintaining the former role's guidance. Unavailable discovery is not proof o
 continued ownership; disclose uncertainty and defer role-specific actions until
 resolved. This does not revoke independent task instructions or shared standards.
 
+Keep a short durable discovery instruction: when using roles, use freshly supplied
+Relay identity to find guidance, including after compaction. Prefer Pallium's
+existing injected context over an extra lookup. Distinguish a confirmed name,
+confirmed no name, and unavailable lookup; omission or an old summary proves
+neither ownership nor loss. If recovery needs a lookup, use a supported read-only
+surface, never the naming mutation with an omitted name (which clears the name).
+Do not add another persistence mechanism or rely on the role skill remaining in
+conversation memory. Verify the host's actual discovery/re-entry behavior.
+
 Takeover redirects future sends only. Reuse existing pending-message and safe-stop
 handling; do not claim it transfers queued messages, task refs or permissions.
 Task completion does not remove the Relay name or its role guidance. On a name
@@ -112,6 +121,9 @@ name's current holder. No automatic historical backfill.
    Then resume A without a local rename: A discovers the externally caused name
    loss and stops applying/updating that role's guidance, without reclaiming the
    name or disturbing B. Earlier history and unrelated task refs remain intact.
+   Repeat after compaction, both with unchanged ownership and after external
+   takeover. Cover next-turn recovery and compaction within an ongoing turn;
+   verify fresh identity and guidance recovery rather than assuming a hook ran.
 4. Verify a task-local exception does not become a permanent rule; unrelated
    shared guidance and task refs survive. Check unpublished handoff edits, stale
    guidance, names without role files, name changes, missing references, occupied
