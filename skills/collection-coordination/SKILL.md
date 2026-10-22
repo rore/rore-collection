@@ -15,7 +15,7 @@ When the user asks about team handoff, fresh manager/developer sessions, or repl
 
 5. The receiver follows its repository's applicable gates. If blocked, promptly report to the lead what is blocked, the next required action, and who needs to act. Continue independent authorized work where possible. The lead handles manager or developer actions within existing authority and surfaces human decisions directly to the human. Update the same authoritative source when the blocker clears.
 
-   When persistent roles are in use, load the [role skill](../persistent-agent-roles/SKILL.md) on role entry or handoff. Carry the mapping and guide path/revision, plus unpublished edits, in the existing continuation packet; the successor resolves its current Relay name and reads current guidance before accepting unfinished work.
+   In repositories that use persistent roles, load the [role skill](../persistent-agent-roles/SKILL.md) at handoff. Carry the mapping and guide path/revision, plus unpublished edits, in the existing continuation packet; the successor resolves its current Relay name and reads current guidance before accepting unfinished work.
 
    When a dependency clears, use an authorized continuation mechanism that can resume the waiting worker; a message alone may not restart an idle subagent. Verify once that it accepted the continuation and resumed; if stale state blocks progress, use an authorized fallback under the channel rules above.
 
