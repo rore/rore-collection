@@ -39,6 +39,11 @@ stay in existing authoritative documents. Role-specific working guidance belongs
 in the role file; temporary branches, blockers and next steps stay in task/handoff
 records. Provide a short generic example and a simple creation/bootstrap path.
 
+Multiple named positions can share a specialty: `@backend-1` and `@backend-2`
+each have a role file linking to the same backend guide, with optional individual
+responsibilities. Reuse Markdown links, not another role ID or assignment system.
+Their routing, history and replacement continuity remain separate.
+
 ### Adoption and handoff
 
 When using the role skill, discover the session's current Relay name and look for
@@ -57,7 +62,9 @@ do not add a dedicated canonical checkout or synchronization system. Shared-file
 edits still preserve others' changes. Recheck the current Relay binding on skill
 entry and resume, including after another session takes over the name; do not
 trust a name cached in conversation. Check the matching definition on name change
-and handoff, and refresh known changed guidance. If ownership was lost, stop using
+and handoff. On resume, refresh applicable linked shared guidance even without a
+change notification; use normal Git reconciliation if the checkout is stale,
+without claiming automatic cross-worktree synchronization. If ownership was lost, stop using
 and maintaining the former role's guidance. Unavailable discovery is not proof of
 continued ownership; disclose uncertainty and defer role-specific actions until
 resolved. This does not revoke independent task instructions or shared standards.
@@ -90,8 +97,13 @@ before finishing UI work" may be lasting guidance; moving one button normally is
 not. Review feedback and proven reusable techniques can inform guidance; transient
 tool failures and failed experiments must not become permanent rules.
 
-Correct existing guidance rather than append redundant rules. Put shared standards
-in their existing document and link them. Keep useful evidence references when
+Correct existing guidance rather than append redundant rules. Choose the owning
+document without making the human route each lesson: shared practice (for example,
+checking tenant isolation when changing queries) belongs in the shared guide;
+lasting position-specific responsibility (such as owning billing) belongs in its
+role file; temporary assignments belong in task records. Preserve concurrent edits
+through ordinary Git reconciliation. Put shared standards in their existing
+document and link them. Keep useful evidence references when
 available, not conversation copies or session diaries. No change is valid when no
 lasting lesson exists. Within granted editing authority, make clear corrections;
 ask about genuinely ambiguous/contradictory feedback or consequential changes in
@@ -129,7 +141,12 @@ name's current holder. No automatic historical backfill.
    guidance, names without role files, name changes, missing references, occupied
    names and unavailable history. Verify no role-registration call is required. Report
    partial success honestly. Demonstrate direct-user use without a manager.
-5. Record actual host support and combined evidence in these existing features.
+5. Two differently named agents use one shared guide. A lasting correction from
+   one updates that guide once; the other resumes and applies the updated guidance
+   without a separate notification or human reminder. Verify position-specific
+   guidance stays separate, temporary task instructions do not become shared rules,
+   concurrent edits are preserved, and messages/history retain their individual names.
+6. Record actual host support and combined evidence in these existing features.
    Observe a bounded sample of natural corrections and replacements after release:
    did expectations survive, were inappropriate rules added, and did upkeep cost
    more than it saved? Agree the observation window at release; no new tracker or
@@ -140,6 +157,8 @@ name's current holder. No automatic historical backfill.
 No background self-improvement, extra role identity or registration, team runtime, automatic session
 creation, guaranteed wake, automatic permissions, mandatory tracker integration,
 new synchronized guidance store or exhaustive review of every conversation.
+Specialty-wide history search (for example, all past backend developers) is outside
+this slice; search remains by individual Relay name, with no new Pallium concept.
 
 This is planned work. This feature does not authorize live installation changes;
 obtain the required scoped approval when delivering installed skills/integrations.
