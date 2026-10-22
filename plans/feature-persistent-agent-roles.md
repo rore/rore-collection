@@ -54,9 +54,13 @@ packet. The successor reads current guidance and explicitly accepts unfinished
 work. Preserve guidance changes and pass any unpublished edits on handoff or
 completion. The single role holder handles normal Git/worktree reconciliation;
 do not add a dedicated canonical checkout or synchronization system. Shared-file
-edits still preserve others' changes. Check the definition on skill entry, Relay
-name change and handoff; refresh guidance
-when resuming work with known changed guidance; do not imply automatic refresh.
+edits still preserve others' changes. Recheck the current Relay binding on skill
+entry and resume, including after another session takes over the name; do not
+trust a name cached in conversation. Check the matching definition on name change
+and handoff, and refresh known changed guidance. If ownership was lost, stop using
+and maintaining the former role's guidance. Unavailable discovery is not proof of
+continued ownership; disclose uncertainty and defer role-specific actions until
+resolved. This does not revoke independent task instructions or shared standards.
 
 Takeover redirects future sends only. Reuse existing pending-message and safe-stop
 handling; do not claim it transfers queued messages, task refs or permissions.
@@ -105,6 +109,9 @@ name's current holder. No automatic historical backfill.
 3. Test a real role: A holds a name and reads its file -> human gives a durable correction -> A updates the
    correct document -> B takes over with authorization -> B follows the expectation
    on a relevant task without a reminder -> B retrieves A's original discussion.
+   Then resume A without a local rename: A discovers the externally caused name
+   loss and stops applying/updating that role's guidance, without reclaiming the
+   name or disturbing B. Earlier history and unrelated task refs remain intact.
 4. Verify a task-local exception does not become a permanent rule; unrelated
    shared guidance and task refs survive. Check unpublished handoff edits, stale
    guidance, names without role files, name changes, missing references, occupied
