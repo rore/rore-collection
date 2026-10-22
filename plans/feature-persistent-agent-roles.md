@@ -16,8 +16,9 @@ another orchestrator. Keep the mechanism simple and usable directly with a human
 
 - Collection: a separate role skill, small role-file convention, foreground upkeep,
   and minimal discovery/handoff additions to the existing coordination skill.
-- [Pallium: persistent role history](https://github.com/rore/Pallium/blob/main/roadmap/features/add-persistent-role-history.md):
-  current role association, temporal history capture and exact role-history search.
+- [Pallium: history by Relay name](https://github.com/rore/Pallium/blob/main/roadmap/features/add-persistent-role-history.md):
+  historical Relay-name attribution and exact name-based history search.
+  Pallium does not interpret role files or register roles.
 - No new Minimap or Agent Workflow role feature by default. Existing repository
   editing and approval requirements still apply; do not duplicate their procedures.
 
@@ -40,22 +41,28 @@ records. Provide a short generic example and a simple creation/bootstrap path.
 
 ### Adoption and handoff
 
-A session reads current guidance, adopts the role through Pallium's supported
-contract, verifies the Relay binding and reports readiness or partial failure.
-Do not silently take an occupied name. Name binding, guidance loaded and assignment
-accepted are separate facts; reuse existing authorization and handoff procedures.
+When using the role skill, discover the session's current Relay name and look for
+its definition in the project. If found, read and follow it; if absent, the name
+remains an ordinary Relay name with no role-specific guidance. No separate role
+adoption, registration or departure call. Report unavailable name discovery rather
+than guess. No definition is normal; an existing unreadable or conflicting
+definition is an error to surface. Reuse existing naming and authorized takeover;
+loading guidance does not itself accept work or expand permissions.
 
 Coordination carries the role entry path/revision with its existing continuation
 packet. The successor reads current guidance and explicitly accepts unfinished
 work. Preserve guidance changes and pass any unpublished edits on handoff or
 completion. The single role holder handles normal Git/worktree reconciliation;
 do not add a dedicated canonical checkout or synchronization system. Shared-file
-edits still preserve others' changes. Refresh guidance on adoption/handoff and
+edits still preserve others' changes. Check the definition on skill entry, Relay
+name change and handoff; refresh guidance
 when resuming work with known changed guidance; do not imply automatic refresh.
 
 Takeover redirects future sends only. Reuse existing pending-message and safe-stop
 handling; do not claim it transfers queued messages, task refs or permissions.
-Role membership persists across tasks until explicitly left or transferred.
+Task completion does not remove the Relay name or its role guidance. On a name
+change, stop applying the former role's guidance and resolve the new definition.
+There is no separate role membership or lifecycle state to maintain.
 
 ### Self-improvement is part of the role
 
@@ -80,27 +87,28 @@ reviewable and reversible through normal repository practices.
 
 ### Source history
 
-Use Pallium's role search to recover supporting conversations when useful, not on
+Use Pallium's history lookup by Relay name to recover conversations when useful, not on
 every turn. History is evidence, not current instructions or proof of live state.
 Preserve access and provenance boundaries. Current guidance must work when history
-is unavailable; clearly disclose unavailable association/search rather than claim
-full continuity. Do not add another memory store or infer old membership from the
+is unavailable; clearly disclose unavailable name lookup/history rather than claim
+full continuity. Do not add another memory store or infer historical names from the
 name's current holder. No automatic historical backfill.
 
 ## Delivery and Acceptance
 
-1. Agree the small adoption/departure/history contract with Pallium before coding
-   dependent instructions. Resolve discovery/bootstrap, explicit rename behavior
-   and missing/conflicting references; keep the Relay name as the only identity.
+1. Reuse existing Relay name discovery and takeover. Agree only the name-based
+   history lookup contract with Pallium. Resolve file discovery/bootstrap and
+   missing/conflicting definitions; keep the Relay name as the only identity.
 2. Implement the role skill and only necessary coordination discovery/handoff
    links. Keep role procedures in the role skill; managers and direct-user sessions
    load the same guidance. Package/install using existing skill conventions.
-3. Test a real role: A adopts -> human gives a durable correction -> A updates the
+3. Test a real role: A holds a name and reads its file -> human gives a durable correction -> A updates the
    correct document -> B takes over with authorization -> B follows the expectation
    on a relevant task without a reminder -> B retrieves A's original discussion.
 4. Verify a task-local exception does not become a permanent rule; unrelated
    shared guidance and task refs survive. Check unpublished handoff edits, stale
-   guidance, missing references, occupied names and unavailable history. Report
+   guidance, names without role files, name changes, missing references, occupied
+   names and unavailable history. Verify no role-registration call is required. Report
    partial success honestly. Demonstrate direct-user use without a manager.
 5. Record actual host support and combined evidence in these existing features.
    Observe a bounded sample of natural corrections and replacements after release:
@@ -110,7 +118,7 @@ name's current holder. No automatic historical backfill.
 
 ## Exclusions
 
-No background self-improvement, extra role identity, team runtime, automatic session
+No background self-improvement, extra role identity or registration, team runtime, automatic session
 creation, guaranteed wake, automatic permissions, mandatory tracker integration,
 new synchronized guidance store or exhaustive review of every conversation.
 
