@@ -57,7 +57,9 @@ and replacement continuity remain separate.
 
 ### Adoption and handoff
 
-When using the role skill, discover the session's current Relay name and resolve
+Persistent roles are a repository-level opt-in, not a task-level switch. The
+repository's existing agent instructions carry the short discovery trigger.
+In an opted-in repository, discover the session's current Relay name and resolve
 its mapping in the project. If mapped, read and follow the file; if unmapped, the name
 remains an ordinary Relay name with no role-specific guidance. No separate role
 adoption, registration or departure call. Report unavailable name discovery rather
@@ -132,6 +134,9 @@ reviewable and reversible through normal repository practices.
 
 Use Pallium's history lookup by Relay name to recover conversations when useful, not on
 every turn. History is evidence, not current instructions or proof of live state.
+Attribute a turn to its validated start-of-turn Relay name, retaining that label for
+delayed capture or retry even if takeover occurs mid-turn; it does not prove current
+ownership or permission to keep using the former role guide.
 Preserve access and provenance boundaries. Current guidance must work when history
 is unavailable; clearly disclose unavailable name lookup/history rather than claim
 full continuity. Do not add another memory store or infer historical names from the
