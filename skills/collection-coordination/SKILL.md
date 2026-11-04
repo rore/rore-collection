@@ -20,7 +20,7 @@ When the user asks about team handoff, fresh manager/developer sessions, or repl
 
    In repositories that use persistent roles, load the [role skill](../persistent-agent-roles/SKILL.md) at handoff. Carry the mapping and guide path/revision, plus unpublished edits, in the existing continuation packet; the successor resolves its current Relay name and reads current guidance before accepting unfinished work.
 
-   Before ending a turn that depends on a worker’s result, confirm how the lead will resume to use it. If no authorized wake is available, use the host’s supported wait. When a worker’s dependency clears, use an authorized channel that can resume the worker and verify it resumed.
+   Before ending a turn that depends on a worker’s result, confirm how the lead will resume to use it. If no authorized wake is available, use the host’s supported wait. When waiting for a collaborator’s result through Pallium Relay, if an authorized Relay wake is available and no independent work remains, end the turn so Relay can wake the session when the result arrives. When a worker’s dependency clears, use an authorized channel that can resume the worker and verify it resumed.
 
    Check existing authorization before requesting human approval. Designate one requester and tell the human what to decide and where, including any worker-local prompt. Keep unanswered decisions visible in subsequent substantive updates. Share the exact approval source with the implementer and verify work resumes; message delivery is not approval.
 
