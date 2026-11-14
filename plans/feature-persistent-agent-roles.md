@@ -41,8 +41,11 @@ Several names can select the same file. No wrapper file per name is required;
 no wildcard matching or inheritance engine. Moving a guidance file requires updating
 its mapping but does not change Relay identity or historical attribution. Validate
 the mapping without silently accepting duplicate names, invalid configuration or
-missing/unreadable referenced files. Missing mapping or no entry is normal opt-out;
-malformed existing configuration is an error, not opt-out.
+missing/unreadable referenced files. Missing mapping or no entry is normal opt-out
+for an ordinary Relay name. If assigned a standing role, report missing setup once
+without claiming persistent guidance is active. Continue independently authorized
+work; this does not authorize creating a role. Malformed existing configuration or
+missing/unreadable referenced files are errors, not opt-out.
 
 The entry names the role, purpose, responsibilities, boundaries, working guidance,
 expected outputs and when to read references. Shared product/design standards
@@ -63,9 +66,11 @@ In an opted-in repository, discover the session's current Relay name and resolve
 its mapping in the project. If mapped, read and follow the file; if unmapped, the name
 remains an ordinary Relay name with no role-specific guidance. No separate role
 adoption, registration or departure call. Report unavailable name discovery rather
-than guess. No definition is normal; an existing unreadable or conflicting
-definition is an error to surface. Reuse existing naming and authorized takeover;
-loading guidance does not itself accept work or expand permissions.
+than guess. No definition is normal for a Relay name alone; an assigned standing
+role with no definition needs the one-time missing-setup report. An existing
+unreadable or conflicting definition is an error to surface. Reuse existing naming
+and authorized takeover; loading guidance does not itself accept work or expand
+permissions.
 
 Coordination carries the mapping and guidance path/revision with its existing continuation
 packet. The successor reads current guidance and explicitly accepts unfinished
@@ -102,11 +107,19 @@ There is no separate role membership or lifecycle state to maintain.
 
 ### Self-improvement is part of the role
 
-The working agent recognizes clear lasting corrections and improves the appropriate
-existing guidance during ordinary work, without requiring the human to request
-documentation upkeep. At completion/handoff, consider any material lessons still
-uncaptured. Briefly tell the human what changed. No separate background process,
-review agent, scheduler or per-turn learning ritual.
+The working agent notices failures, repeated friction, ineffective handoffs, review
+findings, user corrections and demonstrably better working methods. When these
+expose a lasting guidance gap, identify the cause and reusable lesson and make the
+smallest useful correction during ordinary work, without waiting for a role-edit
+request. Requested edits alone do not demonstrate agent-initiated learning.
+
+Use the existing repository workflow and edit authority. At completion/handoff,
+apply any remaining clear lesson or report its concrete blocker. If blocked, keep
+the proposed correction and blocker in the existing task or handoff record when
+available, not a new tracker. Briefly report the file changed and lesson captured;
+a suggestion is not a completed update. With no meaningful lasting lesson, make
+no edit and give no learning report. No separate background process, review agent,
+scheduler, mandatory learning document or per-turn ritual.
 
 Distinguish durable expectations from task-local requests: "check phone layouts
 before finishing UI work" may be lasting guidance; moving one button normally is
@@ -164,7 +177,9 @@ name's current holder. No automatic historical backfill.
    guidance, missing mapping/no entry, duplicate names, malformed configuration,
    missing referenced files, name changes, occupied
    names and unavailable history. Verify no role-registration call is required. Report
-   partial success honestly. Demonstrate direct-user use without a manager.
+   partial success honestly. Demonstrate direct-user use without a manager. For an
+   assigned standing role with no mapping/entry, verify a one-time setup warning,
+   no claim of active persistent guidance, and continued independent work.
 5. Two differently named agents map to one shared guide. A lasting correction from
    one updates that guide once; the other resumes and applies the updated guidance
    without a separate notification or human reminder. Verify position-specific
@@ -177,7 +192,11 @@ name's current holder. No automatic historical backfill.
    Observe a bounded sample of natural corrections and replacements after release:
    did expectations survive, were inappropriate rules added, and did upkeep cost
    more than it saved? Agree the observation window at release; no new tracker or
-   background learning service. Qualification alone is not natural adoption.
+   background learning service. Include an agent-initiated correction from a
+   demonstrated working-method problem without a human role-edit request; verify
+   the guide diff and brief report. Distinguish this from requested edits, blocked
+   proposals and no-lesson tasks; none requires fabricated updates or routine
+   learning reports. Qualification alone is not natural adoption.
 
 ## Exclusions
 
