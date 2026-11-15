@@ -78,8 +78,9 @@ work. Preserve guidance changes and pass any unpublished edits on handoff or
 completion. Agents handle normal Git/worktree reconciliation;
 do not add a dedicated canonical checkout or synchronization system. Shared-file
 edits still preserve others' changes. Recheck the current Relay binding on skill
-entry, resume, handoff and starting a new assignment, including after another
-session takes over the name; do not trust a name cached in conversation. Recheck
+entry, resume, compaction/context recovery, handoff and starting a new assignment,
+including after another session takes over the name; do not trust a name cached
+in conversation. Recheck
 the mapping and applicable guidance at those boundaries and on a known name change.
 Refresh applicable linked shared guidance even without a
 change notification; use normal Git reconciliation if the checkout is stale,
@@ -92,12 +93,23 @@ is no per-turn polling or automatic interruption to refresh guidance.
 
 Keep a short durable discovery instruction: when using roles, use freshly supplied
 Relay identity to find guidance, including after compaction. Prefer Pallium's
-existing injected context over an extra lookup. Distinguish a confirmed name,
-confirmed no name, and unavailable lookup; omission or an old summary proves
+existing injected context over an extra lookup. Before role-specific work after
+compaction/context recovery, reload the skill and read the current mapping,
+selected guide and linked shared guidance from files; a summary quoting them or
+claiming prior loading is not a substitute. The host must supply the durable
+discovery instruction again; skill text alone cannot guarantee re-entry. Refresh
+existing repository triggers during rollout, not just installed skill copies.
+Distinguish a confirmed name, confirmed no name, and unavailable lookup; omission
+or an old summary proves
 neither ownership nor loss. If recovery needs a lookup, use a supported read-only
 surface, never the naming mutation with an omitted name (which clears the name).
 Do not add another persistence mechanism or rely on the role skill remaining in
-conversation memory. Verify the host's actual discovery/re-entry behavior.
+conversation memory. An unexpected unnamed result for an established standing
+role is an identity-continuity discrepancy to report, not normal compaction or
+silent opt-out. Check trusted runtime/session/container binding through supported
+read-only tools without guessing values, renaming or reclaiming a name. An
+unnamed lookup alone proves neither registration loss nor compaction as its cause.
+Verify the host's actual discovery/re-entry behavior.
 
 Takeover redirects future sends only. Reuse existing pending-message and safe-stop
 handling; do not claim it transfers queued messages, task refs or permissions.
@@ -171,7 +183,13 @@ name's current holder. No automatic historical backfill.
    name or disturbing B. Earlier history and unrelated task refs remain intact.
    Repeat after compaction, both with unchanged ownership and after external
    takeover. Cover next-turn recovery and compaction within an ongoing turn;
-   verify fresh identity and guidance recovery rather than assuming a hook ran.
+   verify fresh identity and guidance recovery before the first role-specific
+   action rather than assuming a hook ran or trusting the summary. Verify that the
+   host supplies the durable discovery instruction again. With unchanged ownership
+   and runtime/session/container binding, the Relay name remains registered; an
+   unexpected unnamed result is reported without renaming or abandoning separately
+   authorized work. Use separately authorized controlled sessions; static checks or
+   installed-file sync alone do not prove compaction recovery.
 4. Verify a task-local exception does not become a permanent rule; unrelated
    shared guidance and task refs survive. Check unpublished handoff edits, stale
    guidance, missing mapping/no entry, duplicate names, malformed configuration,
