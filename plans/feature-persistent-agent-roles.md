@@ -104,11 +104,15 @@ or an old summary proves
 neither ownership nor loss. If recovery needs a lookup, use a supported read-only
 surface, never the naming mutation with an omitted name (which clears the name).
 Do not add another persistence mechanism or rely on the role skill remaining in
-conversation memory. An unexpected unnamed result for an established standing
-role is an identity-continuity discrepancy to report, not normal compaction or
-silent opt-out. Check trusted runtime/session/container binding through supported
-read-only tools without guessing values, renaming or reclaiming a name. An
-unnamed lookup alone proves neither registration loss nor compaction as its cause.
+conversation memory. For an unexpected unnamed result, distinguish role assignment
+from successful name acquisition. Before reporting registration loss, check the
+naming call and successful result for the same runtime/session/container through
+existing evidence or scoped history when available. An accepted responsibility,
+blocked claim or occupied-name response is not registration. Preserve unresolved
+naming blockers in the existing task/handoff record when available. If success is
+unproven, report registration as unverified, not lost. Otherwise check current
+binding and supported transfer/clear evidence without assuming compaction caused
+the discrepancy. Do not guess missing values, rename or reclaim a name.
 Verify the host's actual discovery/re-entry behavior.
 
 Takeover redirects future sends only. Reuse existing pending-message and safe-stop
@@ -189,7 +193,10 @@ name's current holder. No automatic historical backfill.
    and runtime/session/container binding, the Relay name remains registered; an
    unexpected unnamed result is reported without renaming or abandoning separately
    authorized work. Use separately authorized controlled sessions; static checks or
-   installed-file sync alone do not prove compaction recovery.
+   installed-file sync alone do not prove compaction recovery. Include an accepted
+   standing-role assignment whose name claim was occupied: after recovery, the
+   agent retains the naming blocker and does not report a lost registration without
+   evidence of a successful claim. Unavailable history leaves acquisition unverified.
 4. Verify a task-local exception does not become a permanent rule; unrelated
    shared guidance and task refs survive. Check unpublished handoff edits, stale
    guidance, missing mapping/no entry, duplicate names, malformed configuration,
