@@ -35,9 +35,9 @@ ledger or make any tool dependent on the entire collection.
 
 ## Intended Flow
 
-1. Establish the overall outcome, acceptance criteria, constraints, and allowed
-   delegation/model budget. Inspect existing work and current capabilities before
-   creating anything; avoid decomposing a task that one session can handle cheaply.
+1. Establish the outcome, acceptance criteria, and constraints, including any
+   stated budget. Use the [coordination skill](../skills/collection-coordination/SKILL.md)
+   to decide whether to split or delegate the work and which route to use.
    When using Minimap, designate one owner-managed shared roadmap checkout per
    repository using it; inspect each checkout and preserve unrelated dirty changes.
    Otherwise use the existing authoritative work source.
